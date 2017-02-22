@@ -1,16 +1,122 @@
-doctype html
-html(lang="de-DE")
+doctype
+html(lang="de",prefix="og: http://ogp.me/ns#")
   head
-    meta(chraset="utf-8")
-    meta(name="viewport",content="initial-scale=1,width=device-width,height=device-height")
-    meta(name="theme-color",content="#e0ff4f")
-    meta(name="robots",content="noindex")
-    link(rel="shortcut icon",href="/assets/img/favicon.png")
-    link(rel="icon",type="image/png",href="/assets/img/favicon-32.png",sizes="32x32")
-    link(rel="apple-touch-icon",sizes="180x180",href="/assets/img/apple-touch-icon.png")
+    meta(charset="utf-8")
+    script.
+      if (window.location.host === 'veyxos.de' && window.location.protocol === 'http:') window.location.protocol = 'https'
+    link(rel="canonical",href="https://veyxos.de")
+    meta(name="viewport",content="initial-scale=1.0,width=device-width")
+    meta(name="robots",content="index,follow")
+    meta(name="keywords",content="veyxos,veyxos.de,web")
+    meta(name="description",content="Website von Veyxos")
+    meta(name="theme-color",content="#fff")
+    title Veyxos.de
+    
+    //- Open Graph
+    meta(property="og:title",content="Home")
+    meta(property="og:site_name",content="Veyxos.de")
+    meta(property="og:description",content="Website von Veyxos")
+    meta(property="og:type",content="website")
+    meta(property="og:url",content="https://veyxos.de")
+    meta(property="og:image",content="http://veyxos.de/assets/img/favicon.png")
+    meta(property="og:image:secure_url",content="https://veyxos.de/assets/img/favicon.png")
+    meta(property="og:image:type",content="image/png")
+    meta(property="og:locale",content="de_DE")
+    
+    //- Twitter
+    meta(name="twitter:card",content="summary")
+    meta(name="twitter:site",content="@veyxos")
+    meta(name="twitter:creator",content="@veyxos")
+    meta(name="twitter:title",content="Veyxos.de")
+    
+    //- CSS
     link(rel="stylesheet",href="/assets/css/app.css")
+    
+    //- Favicon
+    link(rel="shortcut icon",href="/assets/img/favicon.png")
+    link(rel="icon",href="/assets/img/favicon-32.png",sizes="32x32")
+    link(rel="apple-touch-icon",href="/assets/img/favicon-180.png",sizes="180x180")
+    link(rel="shortcut icon",href="/assets/img/favicon.svg",sizes="all",type="image/svg+xml")
+    meta(name="msapplication-TileImage",content="/assets/img/favicon-144.png")
+    meta(name="msapplication-TileColor",content="#333")
+    
+    //- Web App Manifest
+    link(rel="manifest",href="/manifest.json")
+    
+    //- JavaScript
     script(src="/assets/js/app.js")
-    title Veyxos – Blog
+    script(src="/assets/js/home.js")
+    
     
   body
-    p Nothing Special Here
+    header#header
+      a(href="#",title="Home")#headerLogo
+        include ./assets/img/logo.svg
+      nav#nav
+        ul
+          li: a(href="https://fruchtsaft.veyxos.de",title="Fruchtsaft") Fruchtsaft
+          li: a(href="https://blog.veyxos.de/",title="Mein Blog") Blog
+      #mobileToggle: span
+    
+    main
+      section#whoami
+        .content
+          p #[span Hey,]mein Name ist Mike, ich bin 19 Jahre alt, hobbymäßiger Webdesigner / -developer, Pirat, Freifunker, blasser dünner Junge und stolzes Mitglied von Team Mystic.
+          
+      section#projects
+        h2.sectionTitle: span Projekte
+        .content
+          article
+            .projectImg
+              img(src="http://git.nunction.net/veyxos/livelime/raw/master/app/img/logo_padding.png")
+            .projectContent
+              .projectHead
+                h3.projectTitle LiveLime
+                .projectDesription Desktop Client for Twitch built with Electron
+              ul.projectLinks
+                li: a(href="http://git.nunction.net/veyxos/livelime"): #[i.fa.fa-code-fork] GIT Repo
+                li: a(href="https://git.nunction.net/veyxos/livelime#readme"): #[i.fa.fa-globe] Website
+          article
+            .projectImg
+              img(src="/assets/img/fruchtsaft.jpg")
+            .projectContent
+              .projectHead
+                h3.projectTitle Fruchtsaft
+                .projectDesription Zitatsammlung
+              ul.projectLinks
+                li: a(href="https://github.com/veyxos/fruchtsaft"): #[i.fa.fa-code-fork] GIT Repo
+                li: a(href="https://fruchtsaft.veyxos.de"): #[i.fa.fa-globe] Website
+                
+      section#contact
+        h2.sectionTitle: span Kontakt
+        .content
+          form(action="https://formspree.io/veyxos@gmail.com",method="post")
+            .container
+              textarea(name="text",id="contactText")
+              label(for="contactText") Nachricht
+            .container
+              input(type="text",name="name",id="contactName")
+              label(for="contactName") Name
+            .container
+              input(type="email",name="_replyto",id="contactMail")
+              label(for="contactMail") E-Mail
+            input(type="submit",value="Senden")
+      
+    footer#footer
+      #footerUp
+        .social
+          a(href="https://twitter.com/veyxos",title="Twitch").fa.fa-twitter
+          a(href="https://www.twitch.tv/veyxos",title="Twitch").fa.fa-twitch
+          a(href="https://www.reddit.com/u/veyxos",title="Reddit").fa.fa-reddit-alien
+          a(href="https://www.soundcloud.com/veyxos",title="SoundCloud").fa.fa-soundcloud
+          a(href="https://play.spotify.com/user/kgameslp",title="Spotify").fa.fa-spotify
+          a(href="https://github.com/veyxos",title="GitHub").fa.fa-github
+          a(href="http://git.nunction.net/veyxos",title="GitLab").fa.fa-gitlab
+        
+      #footerDown
+        #copyright
+          &copy; 2017 Mike Kühnapfel
+        nav#footerNav
+          a(href="/impressum",title="Impressum") Impressum
+          a(href="/datenschutz",title="Datenschutz") Datenschutz
+      

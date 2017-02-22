@@ -1,16 +1,12 @@
-// VARIABLES
-var helloText = 'JavaScript\'s up and running!!!1elf';
-
-function ready(fn) {
-  if (document.readyState != 'loading') {
-    fn();
+// Functions
+function ready (fn) {
+  if (document.readyState !== 'loading') {
+    fn()
   } else {
-    document.addEventListener('DOMContentLoaded',fn);
+    document.addEventListener('DOMContentLoaded', fn)
   }
 }
 
-ready(function(){
-
-  console.log(helloText);
-
-});
+ready(() => {
+  document.getElementById('mobileToggle').addEventListener('click', () => { document.body.classList.toggle('menu') })
+})
