@@ -61,21 +61,11 @@ html(lang="de",prefix="og: http://ogp.me/ns#")
     main
       section#whoami
         .content
-          p #[span Hey,]mein Name ist Mike, ich bin 19 Jahre alt, hobbymäßiger Webdesigner / -developer, Pirat, Freifunker, blasser dünner Junge und stolzes Mitglied von Team Mystic.
+          p #[span Hey,]mein Name ist Mike, ich bin 21 Jahre alt, Webdeveloper, Pirat, Freifunker.
           
       section#projects
         h2.sectionTitle: span Projekte
         .content
-          article
-            .projectImg
-              img(src="http://git.nunction.net/veyxos/livelime/raw/master/app/img/logo_padding.png")
-            .projectContent
-              .projectHead
-                h3.projectTitle LiveLime
-                .projectDesription Desktop Client for Twitch built with Electron
-              ul.projectLinks
-                li: a(href="http://git.nunction.net/veyxos/livelime"): #[i.fa.fa-code-fork] GIT Repo
-                li: a(href="https://git.nunction.net/veyxos/livelime#readme"): #[i.fa.fa-globe] Website
           article
             .projectImg
               img(src="/assets/img/fruchtsaft.jpg")
@@ -84,23 +74,25 @@ html(lang="de",prefix="og: http://ogp.me/ns#")
                 h3.projectTitle Fruchtsaft
                 .projectDesription Zitatsammlung
               ul.projectLinks
-                li: a(href="https://github.com/veyxos/fruchtsaft"): #[i.fa.fa-code-fork] GIT Repo
+                li: a(href="https://git.nunction.net/veyxos/fruchtsaft"): #[i.fa.fa-code-fork] GIT Repo
                 li: a(href="https://fruchtsaft.veyxos.de"): #[i.fa.fa-globe] Website
                 
       section#contact
         h2.sectionTitle: span Kontakt
         .content
-          form(action="https://formspree.io/veyxos@gmail.com",method="post")
-            .container
-              textarea(name="text",id="contactText")
-              label(for="contactText") Nachricht
-            .container
-              input(type="text",name="name",id="contactName")
-              label(for="contactName") Name
-            .container
-              input(type="email",name="_replyto",id="contactMail")
-              label(for="contactMail") E-Mail
-            input(type="submit",value="Senden")
+
+          a(href="mailto:mike.kuehnapfel@piratenpartei-nrw.de") mike.kuehnapfel@piratenpartei-nrw.de
+          //- form(action="https://formspree.io/veyxos@gmail.com",method="post")
+          //-  .container
+          //-    textarea(name="text",id="contactText")
+          //-    label(for="contactText") Nachricht
+          //-  .container
+          //-    input(type="text",name="name",id="contactName")
+          //-    label(for="contactName") Name
+          //-  .container
+          //-    input(type="email",name="_replyto",id="contactMail")
+          //-    label(for="contactMail") E-Mail
+          //-  input(type="submit",value="Senden") 
       
     footer#footer
       #footerUp
@@ -115,7 +107,7 @@ html(lang="de",prefix="og: http://ogp.me/ns#")
         
       #footerDown
         #copyright
-          &copy; 2017 Mike Kühnapfel
+          &copy; 2019 Mike Kühnapfel
         nav#footerNav
           a(href="/impressum",title="Impressum") Impressum
           a(href="/datenschutz",title="Datenschutz") Datenschutz
